@@ -82,29 +82,40 @@
     }
     .hidden { display: none; }
 
-   footer {
+  footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-  background-color: #FFC107;
-  color: #000;
+  background-color: #333;
+  color: white;
   text-align: center;
-  padding: 15px;
-  font-size: 12px;
-  font-weight: bold;
-  border-top: 4px solid #FF5722;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  padding: 10px 0;
+  font-size: 16px;
+  overflow: hidden;
 }
- 
+
+.footer-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
   </style>
 </head>
 <body>
 <!-- Login Section -->
 <div id="login-page" style="text-align: center; padding: 50px; background-color: #a5d6a7; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 300px; margin: 50px auto; border: 3px solid #4caf50;">
   <div class="logo">
-    <img src="https://i.imgur.com/uWrz8rt.png" alt="School Logo" class="logo-img" style="width: 100px; margin-bottom: 20px;">
+    <img src="https://i.imgur.com/Mv4fLKU.png " alt="School Logo" class="logo-img" style="width: 250px; margin-bottom: 20px;">
   </div>
   
   <h1 style="color: #0056b3; font-size: 28px; font-weight: bold;">RASM Smart School Timetable Generator</h1>
@@ -127,7 +138,7 @@
   <!-- School Name and Logout Button -->
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
     <h2 style="margin: 0; font-size: 24px; font-weight: bold; color: #2c3e50; display: flex; align-items: center;">
-      <img src="https://i.imgur.com/uWrz8rt.png" alt="School Logo" style="height: 36px; margin-right: 12px;">
+      <img src=" https://i.imgur.com/Mv4fLKU.png" alt="School Logo" style="height: 170px; margin-right: 12px;">
       MOI GIRLS HIGH  SCHOOL 
     </h2>
     <button onclick="logout()" style="background-color: #f44336; color: white; padding: 10px 20px; border-radius: 8px; font-size: 16px; border: none; cursor: pointer;">
@@ -176,7 +187,7 @@
 <div id="register-teacher-box" class="box" style="display: none;">
   <h2 style="
     background-color: #e9f5ff;
-    color: #0056b3;
+    color: #0056b3
     padding: 10px 20px;
     border-left: 6px solid #0056b3;
     border-radius: 6px;
@@ -217,26 +228,27 @@
         style="width: 250px; padding: 10px; font-size: 16px; border: 2px solid #3498db; border-radius: 8px; background-color: #ecf0f1; color: #2c3e50; transition: 0.3s ease;">
     <option disabled selected style="color: #7f8c8d;">Select Grade</option>
 
-    <option value="10">Grade 10</option>
-    <option value="10A">Grade 10A</option>
-    <option value="10B">Grade 10B</option>
-    <option value="10C">Grade 10C</option>
-    <option value="10D">Grade 10D</option>
-    <option value="10E">Grade 10E</option>
+    <option value="2">Form 2</option>
+<option value="2A">Form 2A</option>
+<option value="2B">Form 2B</option>
+<option value="2C">Form 2C</option>
+<option value="2D">Form 2D</option>
+<option value="2E">Form 2E</option>
 
-    <option value="11">Grade 11</option>
-    <option value="11A">Grade 11A</option>
-    <option value="11B">Grade 11B</option>
-    <option value="11C">Grade 11C</option>
-    <option value="11D">Grade 11D</option>
-    <option value="11E">Grade 11E</option>
+<option value="3">Form 3</option>
+<option value="3A">Form 3A</option>
+<option value="3B">Form 3B</option>
+<option value="3C">Form 3C</option>
+<option value="3D">Form 3D</option>
+<option value="3E">Form 3E</option>
 
-    <option value="12">Grade 12</option>
-    <option value="12A">Grade 12A</option>
-    <option value="12B">Grade 12B</option>
-    <option value="12C">Grade 12C</option>
-    <option value="12D">Grade 12D</option>
-    <option value="12E">Grade 12E</option>
+<option value="4">Form 4</option>
+<option value="4A">Form 4A</option>
+<option value="4B">Form 4B</option>
+<option value="4C">Form 4C</option>
+<option value="4D">Form 4D</option>
+<option value="4E">Form 4E</option>
+
 </select>
 
       <div id="subject-assignment"></div>
@@ -254,30 +266,68 @@
   <h2 style="color: #2e7d32; text-align: center;">Select Grades to Generate Timetable</h2>
 <form id="grade-selector" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background-color: #eaf6ff; padding: 20px; border-radius: 12px; border: 2px solid #3498db; max-width: 550px; font-family: Arial, sans-serif;">
 
-  <!-- Grade 10 -->
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10"> Grade 10</label>
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10A"> Grade 10A</label>
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10B"> Grade 10B</label>
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10C"> Grade 10C</label>
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10D"> Grade 10D</label>
-  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;"><input type="checkbox" name="grade" value="10E"> Grade 10E</label>
+ <form>
+  <!-- Form 2 -->
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2"> Form 2
+  </label>
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2A"> Form 2A
+  </label>
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2B"> Form 2B
+  </label>
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2C"> Form 2C
+  </label>
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2D"> Form 2D
+  </label>
+  <label style="background: #d1f2eb; padding: 10px; border-radius: 8px; color: #145a32;">
+    <input type="checkbox" name="grade" value="2E"> Form 2E
+  </label>
 
-  <!-- Grade 11 -->
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11"> Grade 11</label>
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11A"> Grade 11A</label>
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11B"> Grade 11B</label>
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11C"> Grade 11C</label>
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11D"> Grade 11D</label>
-  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;"><input type="checkbox" name="grade" value="11E"> Grade 11E</label>
+  <!-- Form 3 -->
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3"> Form 3
+  </label>
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3A"> Form 3A
+  </label>
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3B"> Form 3B
+  </label>
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3C"> Form 3C
+  </label>
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3D"> Form 3D
+  </label>
+  <label style="background: #fdebd0; padding: 10px; border-radius: 8px; color: #7e5109;">
+    <input type="checkbox" name="grade" value="3E"> Form 3E
+  </label>
 
-  <!-- Grade 12 -->
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12"> Grade 12</label>
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12A"> Grade 12A</label>
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12B"> Grade 12B</label>
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12C"> Grade 12C</label>
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12D"> Grade 12D</label>
-  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;"><input type="checkbox" name="grade" value="12E"> Grade 12E</label>
+  <!-- Form 4 -->
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4"> Form 4
+  </label>
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4A"> Form 4A
+  </label>
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4B"> Form 4B
+  </label>
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4C"> Form 4C
+  </label>
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4D"> Form 4D
+  </label>
+  <label style="background: #e8daef; padding: 10px; border-radius: 8px; color: #512e5f;">
+    <input type="checkbox" name="grade" value="4E"> Form 4E
+  </label>
 </form>
+
  <div>
 
  <button onclick="generateCombinedTimetable()" class="btn btn-primary" style="background-color: #007bff; color: white;">
@@ -310,30 +360,32 @@
   <select id="assign-grade" style="width: 100%; padding: 10px; margin-top: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; background-color: #ffffff; color: #333;">
     <option disabled selected>Select Grade</option>
 
-    <!-- Grade 10 -->
-    <option value="10">Grade 10</option>
-    <option value="10A">Grade 10A</option>
-    <option value="10B">Grade 10B</option>
-    <option value="10C">Grade 10C</option>
-    <option value="10D">Grade 10D</option>
-    <option value="10E">Grade 10E</option>
+ <select>
+    <!-- Form 2 -->
+    <option value="2">Form 2</option>
+    <option value="2A">Form 2A</option>
+    <option value="2B">Form 2B</option>
+    <option value="2C">Form 2C</option>
+    <option value="2D">Form 2D</option>
+    <option value="2E">Form 2E</option>
 
-    <!-- Grade 11 -->
-    <option value="11">Grade 11</option>
-    <option value="11A">Grade 11A</option>
-    <option value="11B">Grade 11B</option>
-    <option value="11C">Grade 11C</option>
-    <option value="11D">Grade 11D</option>
-    <option value="11E">Grade 11E</option>
+    <!-- Form 3 -->
+    <option value="3">Form 3</option>
+    <option value="3A">Form 3A</option>
+    <option value="3B">Form 3B</option>
+    <option value="3C">Form 3C</option>
+    <option value="3D">Form 3D</option>
+    <option value="3E">Form 3E</option>
 
-    <!-- Grade 12 -->
-    <option value="12">Grade 12</option>
-    <option value="12A">Grade 12A</option>
-    <option value="12B">Grade 12B</option>
-    <option value="12C">Grade 12C</option>
-    <option value="12D">Grade 12D</option>
-    <option value="12E">Grade 12E</option>
-  </select>
+    <!-- Form 4 -->
+    <option value="4">Form 4</option>
+    <option value="4A">Form 4A</option>
+    <option value="4B">Form 4B</option>
+    <option value="4C">Form 4C</option>
+    <option value="4D">Form 4D</option>
+    <option value="4E">Form 4E</option>
+</select>
+
 </div>
 
       <div id="subject-assignment"></div>
@@ -390,7 +442,12 @@
   <button id="confirmNo" style="color: white; background: red; border: none; padding: 10px;">No</button>
 </div>
 <footer>
-  2025 Moi Girls High  School | All rights reserved. | Powered by RASM Technologies
+  <div class="footer-text">
+ Streamline Your School With RASM Tech!
+Generate accurate class timetables per stream and get automatic teacher timetables in seconds  all aligned with Ministry of Education guidelines. Say goodbye to manual scheduling and hello to smart, efficient school management. Powered by RASM Technologies.
+
+ 2025 Nachu Primary School | All rights reserved. | Powered by RASM Technologies
+  </div>
 </footer>
 </body>
 
@@ -565,7 +622,7 @@ function saveAssignments(wizard = false) {
   const grade = document.getElementById(wizard ? 'wiz-assign-grade' : 'assign-grade').value;
 
   if (!grade) {
-    showCustomAlert('Please select a grade.', 'red');
+    showCustomAlert('Please select a form.', 'red');
     return;
   }
 
@@ -594,7 +651,7 @@ function saveAssignments(wizard = false) {
     }
   });
 
-  showCustomAlert(`Assignments for Grade ${grade} saved.`, 'green');
+  showCustomAlert(`Assignments for Form ${grade} saved.`, 'green');
 }
 
 
@@ -925,9 +982,9 @@ function generateCombinedTimetable() {
   teacherSchedule = {};
 
   const selected = [...document.querySelectorAll(`#grade-selector input:checked`)].map(g => g.value);
-  if (!selected.length) return showCustomAlert('Select at least one grade.', 'red');
+  if (!selected.length) return showCustomAlert('Select at least one form.', 'red');
   for (let grade of selected) {
-    if (!assignments[grade]) return showCustomAlert(`No assignments for Grade ${grade}`, 'orange');
+    if (!assignments[grade]) return showCustomAlert(`No assignments for Form ${grade}`, 'orange');
   }
 
   const allSchedules = {};
